@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CacheMultipleResponse.aspx.cs" Inherits="Cache.CacheMultipleResponse" %>
 
+<%@ OutputCache Duration="60" VaryByParam="DropDownList1" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -9,7 +10,12 @@
 <body>
 	<form id="form1" runat="server">
 		<div>
-			<asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True">
+			<asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+				<asp:ListItem Text="ALL" Value="ALL"></asp:ListItem>
+				<asp:ListItem Text="Laptopts" Value="Laptopts"></asp:ListItem>
+				<asp:ListItem Text="iPhone" Value="iPhone"></asp:ListItem>
+				<asp:ListItem Text="LCD TV" Value="LCD TV"></asp:ListItem>
+				<asp:ListItem Text="Desktop" Value="Desktop"></asp:ListItem>
 			</asp:DropDownList>
 			<br />
 			<br />
@@ -26,12 +32,12 @@
 			</asp:GridView>
 			<br />
 			Server Time :
-			<asp:Label ID="Label1" runat="server"></asp:Label>
+			<asp:Label ID="lblServerTime" runat="server"></asp:Label>
 			<br />
 			<br />
 			Client Time :
-		<script type="text/javascript">
-			document.write(Data());
+		<script>
+			document.write(Date());
 		</script>
 		</div>
 	</form>

@@ -11,7 +11,7 @@ namespace Cache
 {
 
 
-	public partial class CacheMultipleResponse
+	public partial class CacheApplicationData
 	{
 
 		/// <summary>
@@ -24,13 +24,13 @@ namespace Cache
 		protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
 		/// <summary>
-		/// DropDownList1 control.
+		/// btnLoadData control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+		protected global::System.Web.UI.WebControls.Button btnLoadData;
 
 		/// <summary>
 		/// GridView1 control.
@@ -42,12 +42,12 @@ namespace Cache
 		protected global::System.Web.UI.WebControls.GridView GridView1;
 
 		/// <summary>
-		/// lblServerTime control.
+		/// lblMessage control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Label lblServerTime;
+		protected global::System.Web.UI.WebControls.Label lblMessage;
 	}
 }
