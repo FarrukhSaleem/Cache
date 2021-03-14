@@ -107,6 +107,8 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="CacheApplicationData.aspx" />
+    <Content Include="CacheDependancyOnTable.aspx" />
+    <Content Include="CacheDependoncyOnFiles.aspx" />
     <Content Include="CacheMultipleResponse.aspx" />
     <Content Include="CacheThroughCode.aspx" />
     <Content Include="Contact.aspx" />
@@ -115,6 +117,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Data\Countries.xml" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -181,6 +184,20 @@
     </Compile>
     <Compile Include="CacheApplicationData.aspx.designer.cs">
       <DependentUpon>CacheApplicationData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CacheDependancyOnTable.aspx.cs">
+      <DependentUpon>CacheDependancyOnTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CacheDependancyOnTable.aspx.designer.cs">
+      <DependentUpon>CacheDependancyOnTable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CacheDependoncyOnFiles.aspx.cs">
+      <DependentUpon>CacheDependoncyOnFiles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CacheDependoncyOnFiles.aspx.designer.cs">
+      <DependentUpon>CacheDependoncyOnFiles.aspx</DependentUpon>
     </Compile>
     <Compile Include="CacheMultipleResponse.aspx.cs">
       <DependentUpon>CacheMultipleResponse.aspx</DependentUpon>

@@ -13,11 +13,13 @@
 				<tr>
 					<td>
 						<asp:Button ID="btnLoadData" runat="server" Text="Load Data" OnClick="btnLoadData_Click" />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Remove Cache" />
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<asp:GridView ID="GridView1" runat="server" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2">
+						<asp:GridView ID="GridView1" runat="server" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" EnableViewState="False">
 							<FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
 							<HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
 							<PagerStyle ForeColor="#8C4510" HorizontalAlign="Center" />

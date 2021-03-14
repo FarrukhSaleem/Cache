@@ -1,19 +1,22 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Web.Caching;
+using System.Text;
 
 namespace Cache
 {
 	public partial class CacheApplicationData : System.Web.UI.Page
 	{
+		StringBuilder stringBuilder = new StringBuilder();
+
 		protected void Page_Load(object sender, EventArgs e)
 		{
-
 		}
 
 		protected void btnLoadData_Click(object sender, EventArgs e)
 		{
-			System.Text.StringBuilder stringBuilder = new System.Text.StringBuilder();
+			
 
 			DateTime dtStartTime = DateTime.Now;
 			if (Cache["ProductData"] == null)
@@ -21,8 +24,15 @@ namespace Cache
 				DataSet DS = GetProductFromDB();
 				GridView1.DataSource = DS;
 				GridView1.DataBind();
-				
-				Cache["ProductData"] = DS;
+
+				//Cache["ProductData"] = DS;
+				Cache.Add("ProductData", DS, null, System.Web.Caching.Cache.NoAbsoluteExpiration, System.Web.Caching.Cache.NoSlidingExpiration, CacheItemPriority.Default, null);
+
+				//Cache.Add("ProductData", DS, null, DateTime.Now.AddSeconds(10), System.Web.Caching.Cache.NoSlidingExpiration, CacheItemPriority.Default, null);
+
+				//Cache.Add("ProductData", DS, null, System.Web.Caching.Cache.NoAbsoluteExpiration, TimeSpan.FromSeconds(10), CacheItemPriority.Default, null);
+
+				//Cache.Insert("ProductData", DS);
 
 				stringBuilder.Append(DS.Tables[0].Rows.Count.ToString() + " rows retrieved from Database. ");
 			}
@@ -48,6 +58,12 @@ namespace Cache
 			DataSet DS = new DataSet();
 			da.Fill(DS);
 			return DS;
+		}
+
+		protected void Button1_Click(object sender, EventArgs e)
+		{
+			Cache.Remove("ProductData");
+			lblMessage.Text = "Cache data has been removed";
 		}
 	}
 }
